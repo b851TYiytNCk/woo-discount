@@ -1,10 +1,10 @@
 <?php
 /* ACTIVATION */
-function woo_discount_activate() {
+function wdsct_activate() {
 
 }
 
 /* DEACTIVATION */
-function woo_discount_deactivate() {
+function wdsct_deactivate() {
 
 }
