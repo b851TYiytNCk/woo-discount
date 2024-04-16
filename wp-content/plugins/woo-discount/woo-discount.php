@@ -17,11 +17,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$handler = __DIR__  . '/handlers/manager.php';
+define( 'PLUGIN_DIR', __DIR__ );
+$handler = PLUGIN_DIR  . '/handlers/manager.php';
 
 if ( file_exists($handler) ) {
-	register_activation_hook( $handler, 'wdsct_activate' );
-	register_deactivation_hook( $handler, 'wdsct_deactivate' );
+	include_once $handler;
+	register_activation_hook( __FILE__, 'wdsct_activate' );
+	register_deactivation_hook( __FILE__, 'wdsct_deactivate' );
 } else {
 	throw new \RuntimeException('Plugin files are missing, try reinstalling the plugin' );
 }
