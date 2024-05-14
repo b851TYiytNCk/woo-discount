@@ -21,7 +21,7 @@ define( 'PLUGIN_DIR', __DIR__ );
 $handler = PLUGIN_DIR  . '/handlers/manager.php';
 
 if ( file_exists($handler) ) {
-	include_once $handler;
+	include_once( $handler );
 	register_activation_hook( __FILE__, 'wdsct_activate' );
 	register_deactivation_hook( __FILE__, 'wdsct_deactivate' );
 } else {
